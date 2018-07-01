@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Alunos</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong>Alunos</strong>
+			<div align="right">
+  				<a class="btn btn-sm btn-success" th:href="@{/escola/}" >ESCOLAS</a>	 
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-sm table-striped table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Matricula</th>
+							<th>Nome</th>
+							<th>Data.Nasc</th>
+							<th>Endereco</th>
+							<th>RG</th> 
+							<th>CPF</th>
+							<th>Telefone</th>
+							<th>Email</th>
+						 
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="aluno : ${alunos}">
+							<td th:text="${aluno.id}"></td>
+							<td th:text="${aluno.nome}"></td>
+							<td th:text="${#dates.format(aluno.dataNascimento, 'dd/MM/yyyy')}"></td>
+							<td th:text="${aluno.endereco}"></td>
+							<td th:text="${aluno.rg}"></td>
+							<td th:text="${aluno.cpf}"></td>
+							<td th:text="${aluno.telefone}"></td>
+							<td th:text="${aluno.email}"></td>
+							 
+							<td>
+								<div class="btn-group pull-right">
+							   		<a class="btn btn-sm btn-primary" th:href="@{/editAluno/{id}(id=${aluno.id})}" >Editar</a>
+							   		<a class="delete btn btn-sm btn-danger" th:href="@{/deleteAluno/{id}(id=${aluno.id})}">Excluir</a>
+							   </div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-sm btn-success" th:href="@{/addAluno/}" >Adicionar</a>
+		</div>
+	</div>
+</body>
+</html>
