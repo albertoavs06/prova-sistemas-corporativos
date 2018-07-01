@@ -30,7 +30,7 @@
 							<th>CPF</th>
 							<th>Telefone</th>
 							<th>Email</th>
-						 
+							<th>Escola</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -45,6 +45,7 @@
 							<td th:text="${aluno.cpf}"></td>
 							<td th:text="${aluno.telefone}"></td>
 							<td th:text="${aluno.email}"></td>
+							<td th:text="${aluno.escola != null} ? ${#strings.toUpperCase(aluno.escola.nome)} : 'A Escola é null'"></td>
 							 
 							<td>
 								<div class="btn-group pull-right">
@@ -52,6 +53,7 @@
 							   		<a class="delete btn btn-sm btn-danger" th:href="@{/deleteAluno/{id}(id=${aluno.id})}">Excluir</a>
 							   </div>
 							</td>
+							
 						</tr>
 					</tbody>
 				</table>
