@@ -26,7 +26,6 @@
 							<th>Endereco</th>
 							<th>Telefone</th>
 							<th>Email</th>
-							<th>Escola</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -37,7 +36,6 @@
 							<td th:text="${escola.endereco}"></td>
 							<td th:text="${escola.telefone}"></td>
 							<td th:text="${escola.email}"></td>
-							<td th:text="${escola.escola.nome}"></td>
 							<td>
 								<div class="btn-group pull-right">
 							   		<a class="btn btn-sm btn-primary" th:href="@{/editEscola/{id}(id=${escola.id})}" >Editar</a>

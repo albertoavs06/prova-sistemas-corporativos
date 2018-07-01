@@ -29,7 +29,7 @@ public class Aluno implements Serializable {
 	@NotBlank(message = "Matricula é uma informação obrigatória.")  
 	private String matricula;
 	
-	@Column(nullable = false, length = 100) 
+	@Column(nullable = false) 
 	private String nome; 
 	
 	@Temporal(TemporalType.DATE)

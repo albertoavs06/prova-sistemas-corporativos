@@ -37,6 +37,7 @@
 					<tbody>
 						<tr th:each="aluno : ${alunos}">
 							<td th:text="${aluno.id}"></td>
+							<td th:text="${aluno.matricula}"></td>
 							<td th:text="${aluno.nome}"></td>
 							<td th:text="${#dates.format(aluno.dataNascimento, 'dd/MM/yyyy')}"></td>
 							<td th:text="${aluno.endereco}"></td>
